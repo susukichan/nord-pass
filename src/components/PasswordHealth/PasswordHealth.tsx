@@ -2,7 +2,6 @@ import List from "./components/List/List";
 import useItemsProvider from "./useItemsProvider";
 import ErrorBlock from "../ErrorBlock";
 import Filter from "./components/Filter/Filter";
-import LoadingScreen from "../LoadingScreen";
 import Header from "./components/Header/Header";
 import { Route, Switch } from "react-router-dom";
 import { Routes } from "~/constants";
@@ -10,6 +9,7 @@ import itemHasWeakPassword from "~/utils/itemHasWeakPassword";
 import itemHasReusedPassword from "~/utils/itemHasReusedPassword";
 import itemHasOldPassword from "~/utils/itemHasOldPassword";
 import { useUserContext } from "../UserContext";
+import { Loading } from "../Loading/Loading";
 
 const PasswordHealth = () => {
   const {
@@ -21,7 +21,7 @@ const PasswordHealth = () => {
   const { items, isLoading, errorMessage, refetchItems } = useItemsProvider();
 
   if (isLoading || userDataIsLoading) {
-    return <LoadingScreen />;
+    return <Loading />;
   }
 
   if (userProviderErrorMessage || errorMessage) {

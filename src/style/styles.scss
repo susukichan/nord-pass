@@ -38,11 +38,6 @@ body,
   }
 }
 
-.loading-screen {
-  @include flex-center;
-  font-size: large;
-}
-
 .modal {
   position: relative;
   width: 300px;
