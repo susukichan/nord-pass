@@ -5,16 +5,17 @@ import updateItem from "../../../../services/updateItem";
 import Modal from "react-modal";
 
 import "./list-style.scss";
+import { UserItemsProviderHandle } from "../../useItemsProvider";
 
-interface IList {
+interface IList extends Pick<UserItemsProviderHandle, "refetchItems"> {
   items: Array<IItem>;
 }
 
-interface IUpdateModal {
+interface IUpdateModal extends Pick<UserItemsProviderHandle, "refetchItems"> {
   item: IItem;
 }
 
-const UpdateModal: FC<IUpdateModal> = ({ item }) => {
+const UpdateModal: FC<IUpdateModal> = ({ item, refetchItems }) => {
   const [showModal, setShowModal] = useState(false);
   const [newPass, setNewPass] = useState("");
 
@@ -28,6 +29,7 @@ const UpdateModal: FC<IUpdateModal> = ({ item }) => {
         isOpen={showModal}
         onRequestClose={() => setShowModal(false)}
         contentLabel="Example Modal"
+        appElement={document.getElementById("app")}
       >
         <h1>Update Password</h1>
         <input
@@ -40,12 +42,19 @@ const UpdateModal: FC<IUpdateModal> = ({ item }) => {
           <button
             className="button"
             onClick={async () => {
-              await updateItem({
+              const rsp = await updateItem({
                 ...item,
                 password: newPass,
               });
-
-              window.location.reload();
+              if (rsp.status === 200) {
+                setNewPass("");
+                setShowModal(false);
+                refetchItems();
+              } else {
+                //  TODO handle error
+                setNewPass("");
+                setShowModal(false);
+              }
             }}
           >
             Change
@@ -65,7 +74,7 @@ const UpdateModal: FC<IUpdateModal> = ({ item }) => {
   );
 };
 
-const List: FC<IList> = ({ items }) => (
+const List: FC<IList> = ({ items, refetchItems }) => (
   <ul className="list">
     {items.map((item) => (
       <li key={item.id} className="item">
@@ -74,7 +83,7 @@ const List: FC<IList> = ({ items }) => (
           <div className="title">{item.title}</div>
           <div className="description">{item.description}</div>
         </div>
-        <UpdateModal item={item} />
+        <UpdateModal refetchItems={refetchItems} item={item} />
       </li>
     ))}
   </ul>

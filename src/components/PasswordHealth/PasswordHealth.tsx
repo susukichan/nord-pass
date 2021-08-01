@@ -18,7 +18,7 @@ const PasswordHealth = () => {
     username,
   } = useUserContext();
 
-  const { items, isLoading, errorMessage } = useItemsProvider();
+  const { items, isLoading, errorMessage, refetchItems } = useItemsProvider();
 
   if (isLoading || userDataIsLoading) {
     return <LoadingScreen />;
@@ -34,18 +34,25 @@ const PasswordHealth = () => {
       <Filter items={items} />
       <Switch>
         <Route exact path={Routes.PasswordHealth}>
-          <List items={items} />
+          <List refetchItems={refetchItems} items={items} />
         </Route>
         <Route path={Routes.Weak}>
-          <List items={items.filter(itemHasWeakPassword)} />
+          <List
+            refetchItems={refetchItems}
+            items={items.filter(itemHasWeakPassword)}
+          />
         </Route>
         <Route path={Routes.Reused}>
           <List
+            refetchItems={refetchItems}
             items={items.filter((item) => itemHasReusedPassword(item, items))}
           />
         </Route>
         <Route path={Routes.Old}>
-          <List items={items.filter((item) => itemHasOldPassword(item))} />
+          <List
+            refetchItems={refetchItems}
+            items={items.filter((item) => itemHasOldPassword(item))}
+          />
         </Route>
       </Switch>
     </div>
