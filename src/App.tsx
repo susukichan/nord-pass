@@ -21,9 +21,9 @@ const App = () => (
           </UserContextProvider>
         )}
       />
-      <PrivateRoute
+      <PublicRoute
         path={Routes.Root}
-        component={() => <Redirect to={Routes.PasswordHealth} />}
+        component={() => <Redirect to={Routes.Login} />}
       />
     </Switch>
   </Router>
