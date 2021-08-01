@@ -48,3 +48,18 @@ body,
   left: 40%;
   top: 38%;
 }
+
+.content {
+  display: flex;
+justify-content: center;
+}
+
+.error-container{
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  background-color: $grey-lightest;
+  border: 1px solid $grey;
+  width: 30rem;
+  margin-top: 1rem;
+}

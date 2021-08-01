@@ -21,7 +21,9 @@ const Header: FC<IHeader> = ({ items, username }) => {
             logout();
             push(Routes.Login);
           }}
-        >{`Logout ${username}`}</button>
+        >
+          Logout {username ?? ""}
+        </button>
       </div>
       <h1>{`${items.length} Items are vulnerable`}</h1>
       <span>Create new complex passwords to protect your accounts</span>

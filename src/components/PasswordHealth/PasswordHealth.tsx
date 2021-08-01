@@ -25,7 +25,16 @@ const PasswordHealth = () => {
   }
 
   if (userProviderErrorMessage || errorMessage) {
-    return <ErrorBlock error={userProviderErrorMessage || errorMessage} />;
+    return (
+      <div className="container">
+        <Header items={items} username={username} />
+        <div className="content">
+          <div className="error-container">
+            <ErrorBlock error={userProviderErrorMessage || errorMessage} />
+          </div>
+        </div>
+      </div>
+    );
   }
 
   return (
