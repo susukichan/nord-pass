@@ -1,8 +1,10 @@
-@import './_variables';
-@import './_spacings';
-@import './__mixins.scss';
+@import "./_variables";
+@import "./_spacings";
+@import "./__mixins.scss";
 
-html, body, #app {
+html,
+body,
+#app {
   height: 100%;
   margin: 0;
   padding: 0;
@@ -15,6 +17,9 @@ html, body, #app {
 
 .input {
   height: 32px;
+  padding-left: 16px;
+  border: 1px solid $grey;
+  border-radius: 3px;
 }
 
 .button {
@@ -27,6 +32,10 @@ html, body, #app {
   padding: 12px 6px;
   font-weight: bold;
   font-size: 16px;
+  &:hover {
+    background-color: $teal-light;
+    transition-duration: 0.25s;
+  }
 }
 
 .loading-screen {

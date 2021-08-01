@@ -1,4 +1,4 @@
-@import '../../../../style/_variables';
+@import "~/style/_variables";
 
 .list {
   list-style: none;
@@ -13,16 +13,45 @@
     display: flex;
 
     .item-icon {
-      color: white;
+      color: $white;
       font-weight: bold;
       border-radius: 9px;
       height: 38px;
       width: 38px;
-      background-color: $grey;
       display: flex;
       justify-content: center;
       align-items: center;
       margin-right: 12px;
+      &--001 {
+        background-color: #cb9dff;
+      }
+      &--002 {
+        background-color: #00e1b8;
+      }
+      &--003 {
+        background-color: #ff731b;
+      }
+      &--004 {
+        background-color: #ffb821;
+      }
+      &--005 {
+        background-color: #98fb98;
+      }
+      &--006 {
+        background-color: #d778ff;
+      }
+      &--007 {
+        background-color: #ffd600;
+      }
+      &--008 {
+        background-color: #ff3a93;
+      }
+      &--009 {
+        background-color: #abcfe8;
+      }
+      &--010 {
+        background-color: #3dc3fb;
+      }
     }
 
     .title {
@@ -33,10 +62,23 @@
     .update {
       margin-left: auto;
       margin-right: 32px;
+      background-color: $teal;
+      color: $white;
+      border-width: 0;
+      border-radius: 9999px;
+      border-style: solid;
+      padding: 0.8rem 1.8rem;
+      cursor: pointer;
+      &:hover {
+        background-color: $teal-light;
+        border-color: $teal-light;
+        transition-duration: 0.25s;
+      }
     }
 
     &:hover {
-      background-color: $grey-light;
+      background-color: $grey-lightest;
+      transition-duration: 0.25s;
     }
   }
 }
