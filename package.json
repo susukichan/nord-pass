@@ -7,7 +7,8 @@
     "test": "jest",
     "start:server": "ts-node ./server/index.ts",
     "start:web": "webpack serve",
-    "start": "run-p start:*"
+    "start": "run-p start:*",
+    "format": "yarn prettier --write src"
   },
   "dependencies": {
     "@types/jest": "^26.0.20",
