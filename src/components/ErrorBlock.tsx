@@ -3,7 +3,7 @@ import { FC, memo } from "react";
 import "./Login/login-style.scss";
 
 interface IErrorBlock {
-  error: String;
+  error: string;
 }
 
 const ErrorBlock: FC<IErrorBlock> = ({ error }) => {
