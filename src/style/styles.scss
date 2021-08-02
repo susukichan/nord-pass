@@ -1,8 +1,10 @@
-@import './_variables';
-@import './_spacings';
-@import './__mixins.scss';
+@import "./_variables";
+@import "./_spacings";
+@import "./__mixins.scss";
 
-html, body, #app {
+html,
+body,
+#app {
   height: 100%;
   margin: 0;
   padding: 0;
@@ -15,6 +17,9 @@ html, body, #app {
 
 .input {
   height: 32px;
+  padding-left: 16px;
+  border: 1px solid $grey;
+  border-radius: 3px;
 }
 
 .button {
@@ -23,24 +28,25 @@ html, body, #app {
   background-color: $teal;
   border-radius: 9999px;
   cursor: pointer;
-  color: white;
+  color: $white;
   padding: 12px 6px;
-  font-weight: bold;
   font-size: 16px;
-}
-
-.loading-screen {
-  @include flex-center;
-  font-size: large;
+  &:hover {
+    background-color: $teal-light;
+    transition-duration: 0.25s;
+  }
 }
 
 .modal {
   position: relative;
   width: 300px;
   display: flex;
-  background-color: #e1e1e1;
+  background-color: $grey-light;
+  border-radius: 3px;
   padding: 18px 32px;
   flex-direction: column;
   left: 40%;
   top: 38%;
 }
+
+

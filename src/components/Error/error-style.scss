@@ -1,0 +1,17 @@
+@import "~/style/_variables";
+
+.content {
+  display: flex;
+  justify-content: center;
+}
+
+.error-container{
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  background-color: $grey-lightest;
+  border: 1px solid $grey;
+  border-radius:3px;
+  width: 30rem;
+  margin-top: 1rem;
+}

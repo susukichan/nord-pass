@@ -1,20 +1,29 @@
+@import "~/style/_variables";
+
 .login-page {
-  background: url('/public/assets/mountain.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
 
   .login-form {
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px,
+      rgba(0, 0, 0, 0.05) 0px 5px 10px;
     display: flex;
+    border-radius: 3px;
     justify-content: center;
     flex-direction: column;
-    background-color: white;
+    background-color: $white;
     padding: 50px;
     width: 350px;
     height: 400px;
+  }
+
+  .error-message {
+    color: $red;
+    border: 1px solid $red;
+    border-radius: 3px;
+    padding: 4px 8px;
+    background-color: $red-light;
   }
 }
