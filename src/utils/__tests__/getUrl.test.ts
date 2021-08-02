@@ -3,7 +3,7 @@ import { API } from "../../constants";
 
 process.env.API_URL = "http://localhost:9003";
 
-describe("should convert api url and params to URI", () => {
+describe("should convert api url and params to URL", () => {
   test.each([
     ["http://localhost:9003/api/login", API.Login, {}],
     [
