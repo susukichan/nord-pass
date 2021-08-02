@@ -1,6 +1,6 @@
 import List from "./components/List/List";
 import useItemsProvider from "./useItemsProvider";
-import ErrorBlock from "../ErrorBlock";
+import ErrorBlock from "../Error/ErrorBlock";
 import Filter from "./components/Filter/Filter";
 import Header from "./components/Header/Header";
 import { Route, Switch } from "react-router-dom";

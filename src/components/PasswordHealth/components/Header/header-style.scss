@@ -7,7 +7,7 @@
   align-items: center;
   flex-direction: column;
   background-color: $red;
-  color: white;
+  color: $white;
 
   .user-section {
     top: 16px;
@@ -15,15 +15,20 @@
     position: absolute;
 
     button {
-      font-size: larger;
-      font-weight: 700;
-      background-color: $grey-light;
-      padding: 12px 18px;
-      cursor: pointer;
-      user-select: none;
-      margin-left: 12px;
-      border-radius: 9px;
+      margin-left: auto;
+      margin-right: 32px;
+      background-color: $black;
+      color: $white;
       border-width: 0;
+      border-radius: 9999px;
+      border-style: solid;
+      padding: 0.8rem 1.8rem;
+      cursor: pointer;
+      &:hover {
+        background-color: $black-light;
+        border-color: $black-light;
+        transition-duration: 0.25s;
+      }
     }
   }
 }

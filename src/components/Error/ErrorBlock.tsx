@@ -1,6 +1,6 @@
 import { FC, memo } from "react";
 
-import "./Login/login-style.scss";
+import "./error-style.scss";
 
 interface IErrorBlock {
   error: string;

@@ -4,9 +4,10 @@
 
 .loading-screen {
   @include flex-center;
-  font-size: large;
+  font-size: larger;
   width: 100vw;
   height: 100vh;
+  color: $teal;
 }
 
 // source: https://github.com/loadingio/css-spinner/
